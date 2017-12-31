@@ -13,13 +13,13 @@ $ python pprint_json.py <path to file>
 # returns like:
 # ['one',
 #  'two',
-#  {'three.five',
-#   'three.four',
-#   'three.one',
-#   'three.seven',
-#   'three.six',
-#   'three.three',
-#   'three.two'}]
+#  {'three.five': 5,
+#   'three.four': 4,
+#   'three.one': 1,
+#   'three.seven': 7,
+#   'three.six': 6,
+#   'three.three': 3,
+#   'three.two': 2}]
 
 ```
 
