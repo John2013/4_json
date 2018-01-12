@@ -15,13 +15,13 @@ def json_pprint(json_data):
 
 
 if __name__ == '__main__':
+    file_path = ""
     if len(sys.argv) > 1:
         file_path = sys.argv[1]
     else:
-        file_path = ""
+        exit("Ошибка: Отсутствует путь к файлу")
 
-    while not isfile(file_path):
-        print("Неверный путь к файлу")
-        file_path = input("Введите путь к файлу: ")
-
-    json_pprint(load_json_from_file(file_path))
+    try:
+        json_pprint(load_json_from_file(file_path))
+    except FileNotFoundError:
+        exit("Ошибка: Файл не найден")
