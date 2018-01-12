@@ -2,8 +2,6 @@ import json
 
 import sys
 
-from os.path import isfile
-
 
 def load_json_from_file(file_path):
     with open(file_path, encoding='utf-8') as file:
@@ -15,7 +13,6 @@ def json_pprint(json_data):
 
 
 if __name__ == '__main__':
-    file_path = ""
     if len(sys.argv) > 1:
         file_path = sys.argv[1]
     else:
@@ -25,3 +22,5 @@ if __name__ == '__main__':
         json_pprint(load_json_from_file(file_path))
     except FileNotFoundError:
         exit("Ошибка: Файл не найден")
+    except ValueError:
+        exit("Ошибка: ошибка распознавания разметки JSON")
